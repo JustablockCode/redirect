@@ -60,6 +60,13 @@ class CustomVar {
                         }
                     }
                 },
+                {
+                    opcode: "getallvar",
+                    blockType: Scratch.BlockType.REPORTER,
+                    text: "Get all variables",
+                    returnType: Scratch.ArgumentType.STRING,
+                    disableMonitor: true
+                },
             ]
         }
     }
@@ -87,6 +94,9 @@ class CustomVar {
 
     vardelete(args) {
         delete this.variables[args.VAR];
+    }
+    getallvar() {
+        return JSON.stringify(this.variables);
     }
 }
 
