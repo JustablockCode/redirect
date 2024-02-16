@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Form</title>
+</head>
+<body>
+    <form id="emailForm">
+        <label for="to">To:</label>
+        <input type="email" id="to" name="to" required><br><br>
+        
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required><br><br>
+        
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+        
+        <input type="submit" value="Send Email">
+    </form>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("user_your_user_id_here");
+        })();
+    </script>
+    
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            sendEmail(this);
+        });
+
+        function sendEmail(form) {
+            emailjs.sendForm('service_your_service_id_here', 'template_your_template_id_here', form)
+                .then(function(response) {
+                    alert('Email sent successfully!');
+                    form.reset();
+                }, function(error) {
+                    console.error('Email send failed:', error);
+                });
+        }
+    </script>
+</body>
+</html>
