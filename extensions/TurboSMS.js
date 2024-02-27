@@ -5,7 +5,7 @@ class TurboSMS {
         return {
             id: 'TurboSMS',
             name: 'Turbo SMS',
-	    color1: "#001299",
+	        color1: "#001299",
             color2: "#010057",
             color3: "#00092e",
 	    menuIconURI: logo,
