@@ -22,7 +22,7 @@
             var userId = document.getElementById('userId').value;
             var amount = document.getElementById('amount').value;
 
-            fetch('/api/update-balance', {
+            fetch('https://zimnode.justablock.online/api/update-balance', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
