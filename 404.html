@@ -1,1 +1,19 @@
 <title>404</title>
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        const targetDomain = 'https://www.justablock.online';
+        const currentPath = window.location.pathname;
+
+        if (currentPath.startsWith('/')) {
+            window.location.href = targetDomain + currentPath;
+        } else {
+            window.location.href = targetDomain;
+        }
+    </script>
+</head>
+<body>
+    <p>You will be redirected to justablock.online soon!</p>
+</body>
+</html>
